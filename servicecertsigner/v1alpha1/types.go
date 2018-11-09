@@ -24,6 +24,10 @@ type ServiceServingCertSignerConfig struct {
 
 	// Signer holds the signing information used to automatically sign serving certificates.
 	Signer configv1.CertInfo `json:"signer"`
+	// Intermediate holds a cross-signed intermediate certificate to distribute with serving certs after rotation.
+	Intermediate string `json:"intermediate"`
+	// SignerGeneration increments after CA rotation to signal that serving certs should be regenerated.
+	SignerGeneration int64 `json:"signerGeneration"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

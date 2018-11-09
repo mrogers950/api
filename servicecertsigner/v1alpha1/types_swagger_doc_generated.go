@@ -82,11 +82,13 @@ func (ServiceCertSignerOperatorConfigSpec) SwaggerDoc() map[string]string {
 }
 
 var map_ServiceServingCertSignerConfig = map[string]string{
-	"":               "ServiceServingCertSignerConfig provides information to configure a serving serving cert signing controller",
-	"servingInfo":    "ServingInfo is the HTTP serving information for the controller's endpoints",
-	"authentication": "authentication allows configuration of authentication for the endpoints",
-	"authorization":  "authorization allows configuration of authentication for the endpoints",
-	"signer":         "Signer holds the signing information used to automatically sign serving certificates.",
+	"":                 "ServiceServingCertSignerConfig provides information to configure a serving serving cert signing controller",
+	"servingInfo":      "ServingInfo is the HTTP serving information for the controller's endpoints",
+	"authentication":   "authentication allows configuration of authentication for the endpoints",
+	"authorization":    "authorization allows configuration of authentication for the endpoints",
+	"signer":           "Signer holds the signing information used to automatically sign serving certificates.",
+	"intermediate":     "Intermediate holds a cross-signed intermediate certificate to distribute with serving certs after rotation.",
+	"signerGeneration": "SignerGeneration increments after CA rotation to signal that serving certs should be regenerated.",
 }
 
 func (ServiceServingCertSignerConfig) SwaggerDoc() map[string]string {
